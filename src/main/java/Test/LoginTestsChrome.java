@@ -13,7 +13,7 @@ import java.util.concurrent.TimeUnit;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
-public class LoginTests {
+public class LoginTestsChrome {
 
     WebDriver driver = new FirefoxDriver();
 
@@ -24,7 +24,7 @@ public class LoginTests {
     }
 
     @Test(priority = 1)
-    public void shouldLoginAsUser() throws InterruptedException {
+    public void shouldLoginAsUser() {
 
         driver.get("http://login.multidetect.eu");
         driver.findElement(By.name("username")).sendKeys("p.polanowski@aberit.eu");
