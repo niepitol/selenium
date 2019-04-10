@@ -13,7 +13,6 @@ import org.testng.annotations.Test;
 import static Configuration.DefaultTestData.userLogin;
 import static Configuration.DefaultTestData.userPassword;
 
-
 public class CreateNewFarm {
 
     public WebDriver driver;
@@ -34,6 +33,7 @@ public class CreateNewFarm {
 
 //        LoginTestFireFox loginUser = new LoginTestFireFox();
 //        loginUser.testLoginUser();
+
         WebDriverWait wait = new WebDriverWait(driver,3);
         WebElement loginField = driver.findElement(By.name("username"));
         loginField.sendKeys(userLogin);
@@ -50,25 +50,37 @@ public class CreateNewFarm {
 
     @Test(priority = 2)
     public void CreateFarm() {
+
+        WebDriverWait wait = new WebDriverWait(driver,3);
+
         WebElement createFarmField = driver.findElement(By.linkText("Utwórz"));
         createFarmField.click();
+
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("button[class*='el-button--primary']")));
 
         String url = driver.getCurrentUrl();
         System.out.println(url);
 
-        for(int i=0;i<1;i++) {
+      //for(int i=0;i<1;i++) {
 
-            WebElement nameFarmField = driver.findElement((By.name("name")));
-            nameFarmField.sendKeys("Farm"+i);
+          //Nazwa projektu
+          WebElement nameFarmField = driver.findElement((By.name("name")));
+          nameFarmField.sendKeys("Farm");
 
-            WebElement farmCodeField = driver.findElement((By.id("farm-code")));
-            farmCodeField.sendKeys(("FCode"+i));
+          //Kod farmy
+          WebElement farmCodeField = driver.findElement((By.id("farm-code")));
+          farmCodeField.sendKeys(("FCode"));
 
-            Select structureFarm = new Select(driver.findElement(By.name("structure")));
-            structureFarm.selectByVisibleText("Farm");
+          //Struktura
+          Select structureFarm = new Select(driver.findElement(By.name("structure")));
+          structureFarm.selectByVisibleText("Farm");
 
 
-        }
+
+
+
+
+      //  }
 
 
 

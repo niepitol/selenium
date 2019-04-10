@@ -25,6 +25,19 @@
             <version>7.0.0-beta3</version>
             <scope>compile</scope>
         </dependency>
+        <dependency>
+            <groupId>com.codeborne</groupId>
+            <artifactId>selenide</artifactId>
+            <version>5.2.2</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.codeborne</groupId>
+            <artifactId>selenide</artifactId>
+            <version>5.2.2</version>
+            <scope>compile</scope>
+        </dependency>
+
     </dependencies>
 
 
